@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import './CharPicker.css';
+import "./CharPicker.scss";
 
 class CharPicker extends Component {
   state = { characters: [], isLoading: false };
 
   componentDidMount() {
     this.setState({ isLoading: true });
-    fetch('https://swapi.co/api/people')
+    fetch("https://swapi.co/api/people")
       .then(response => {
         if (!response.ok) {
-          throw new Error('Failed to fetch.');
+          throw new Error("Failed to fetch.");
         }
         return response.json();
       })
